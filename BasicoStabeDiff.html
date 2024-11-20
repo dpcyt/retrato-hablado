@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stable Diffusion Automatic 1111</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(181, 192, 208);
+            color: rgb(72, 77, 76);
+            text-align: center;
+        }
+
+        /* Imagen superior */
+        .imagen-header {
+            width: 100%;
+            height: 200px; /* Altura ajustable */
+            object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+        }
+
+        /* Título */
+        h1 {
+            margin: 20px 0;
+            font-size: 24px;
+            color:black;
+        }
+
+        /* Contenedores */
+        .contenedor {
+            margin: 20px auto;
+            max-width: 750px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Contenedor de texto */
+        .contenedor.texto {
+            font-size: 16px;
+            line-height: 1.6;
+            text-align: left;
+            background-color: rgb(238, 211, 217); /* Color gris rosado */
+            padding: 10px; /* Espaciado interno para que el texto no esté pegado */
+            border-radius: 5px; /* Bordes redondeados */
+        }
+      
+      /* Contenedor de imagen */
+      .contenedor.imagen {
+          background-color:rgb(245, 232, 221);
+          padding: 5px;
+          border-radius: 5px;
+          text-align: center;
+      }
+
+        /* Contenedor de imagen */
+        .contenedor.imagen img {
+            width: 100%;
+            border-radius: 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="tu-imagen-superior.jpg" alt="Imagen superior" class="imagen-header">
+    </header>
+    <main>
+        <h1>Uso básico de Stable Diffusion Automatic 1111</h1>
+        <div class="contenedor texto">
+          <p>Para facilitar la comprensión del programa, se seleccionó una imagen de un retrato hablado simple. 
+            Este punto de partida permite explorar y entender los distintos parámetros que se pueden modificar 
+            para alcanzar el resultado deseado. El objetivo principal es ilustrar cómo cada ajuste influye en el 
+            proceso creativo, desde la generación de detalles hasta la transformación estilística.<br>De este 
+            modo, el retrato hablado se convierte en un ejemplo práctico que ayuda a las personas que están 
+            comenzando a familiarizarse con el programa a visualizar los efectos de los cambios en tiempo real 
+            y a desarrollar confianza en el uso de sus herramientas.<br><br><strong>A continuación la siguiente 
+              imagen con la que se trabajara:</strong><br/>
+            <a href="https://www.criticarte.com/Page/file/art2009/RetratHabldoFS.html?=RetratHabldo.htmlm">Haz clic aquí para visitar la pagina</a>
+          </p>
+        </div>
+        
+      
+      <div class="contenedor imagen">
+        <img src="Img/0030.jpg" alt="Imagen relacionada">
+      </div>
+      
+      <div class="contenedor texto">
+        <p><strong>Pantalla inicial de Stable Diffusion:</strong> Al iniciar el programa de Stable Diffusion, 
+          nos encontramos con una interfaz que permite generar imágenes a partir de distintos parámetros. 
+          Para crear una imagen de acuerdo a nuestras preferencias, se deben seguir los siguientes pasos:</p>
+        <ol>
+          <li><strong>Dirigirse a img2img para cargar la imagen</strong></li>
+          <li><strong>Crear un prompt (en inglés)</strong></li>
+          <li><strong>Hacer uso de Lora</strong></li>
+          <li><strong>Configuración de tamaño de imagen, CFG Scale y Denoising Strength</strong></li>
+          <li><strong>Configurar Tiled Diffusion</strong></li>
+          <li><strong>Configurar ControlNet</strong></li>
+        </ol>
+      </div>
+      
+      <div class="contenedor imagen">
+        <img src="Img/0031.jpg" alt="Imagen relacionada">
+      </div>
+      
+      
+      <div class="contenedor texto">
+        <p><strong>1 - Dirigirse a img2img para cargar la imagen</strong><br>Nos dirigimos a la opción 
+          "img2img". Esta función nos permite trabajar con una imagen de referencia, utilizando la 
+          inteligencia artificial para modificarla o mejorarla según nuestras preferencias. A 
+          continuación, cargamos la imagen que deseamos modificar o usar como base para generar nuevas imágenes
+        </p>
+      </div>
+      
+      
+      <div class="contenedor imagen">
+        <img src="Img/0032.jpg" alt="Imagen relacionada">
+      </div>
+      
+      <div class="contenedor texto">
+        <p><strong>2 - Crear un prompt (en inglés)</strong><br>El prompt es una descripción detallada de lo 
+          que deseas generar o los aspectos que más quieras destacar en la imagen. Este texto guía al modelo 
+          para producir un resultado acorde a tus expectativas. Asegúrate de que esté en inglés. Si no dominas 
+          el inglés, puedes utilizar traductores en línea como apoyo para redactar tu descripción.
+        </p>
+      </div>
+      
+      
+      <div class="contenedor imagen">
+        <img src="Img/0033.jpg" alt="Imagen relacionada">
+      </div>
+      
+      <div class="contenedor texto">
+        <p><strong>3 - Hacer uso de Lora</strong><br> Lora es una herramienta que permite agregar detalles 
+          adicionales o ajustar características específicas en la imagen generada. Es especialmente útil 
+          para lograr un mayor nivel de personalización y precisión en el resultado final.
+        </p>
+        <p><strong>Los modelos Lora utilizados son los siguientes:</strong></p>
+        <ol>
+          <li><strong><a href="https://civitai.com/models/171159?modelVersionId=236130" target="_blank">SDXLrender</a>:</strong> Este modelo está diseñado para crear imágenes de alta calidad con un enfoque realista. Es ideal para generar personajes de fantasía, paisajes y escenas modernas con una estética fotorrealista. Ofrece un sistema mejorado de detalles de fondo y colores más vivos. Se recomienda un peso de <strong>0.2 a 0.9</strong> para lograr un equilibrio entre los detalles deseados y el estilo del modelo.</li>
+          <li><strong><a href="https://civitai.com/models/82098?modelVersionId=87153" target="_blank">Add More Details</a>:</strong> Este modelo se enfoca en estilos de cómic y arte fantástico, creando ilustraciones semirrealistas, conceptos de personajes y paisajes complejos en 2D o 2.5D. Es ideal para producciones con estética de cómics occidentales y combina bien con otros LoRAs. Se recomienda un peso de <strong>0.5 a 1</strong> para obtener resultados óptimos en estilos de cómic y fantasía.</li>
+        </ol>
+        <p>En la siguiente imagen se ve gráficamente como añadir estos modelos al prompt</p>
+      </div>
+      
+      <div class="contenedor imagen">
+        <img src="Img/0034.jpg" alt="Imagen relacionada">
+      </div>
+      
+      
+      <div class="contenedor texto">
+        <p><strong>4 - Configuración de tamaño de imagen, CFG Scale y Denoising Strength</strong><br>En las 
+          configuraciones iniciales, vamos a configurar de la siguiente manera, teniendo en cuenta lo que 
+          refiere cada opción:
+        </p>
+        <ul>
+          <li><strong>Sampling method:</strong> Es el algoritmo que utiliza Stable Diffusion para generar 
+            las imágenes a partir del ruido inicial. Elegimos la opción <strong>"DPM++ 3M SDE"</strong> 
+            porque es eficiente y produce resultados de alta calidad, balanceando bien entre velocidad y 
+            precisión en la generación de imágenes.</li>
+          <li><strong>Sampling steps:</strong> Determinan cuántas iteraciones realizará el modelo para 
+            generar la imagen. A más pasos, mayor será el nivel de detalle y calidad, pero también aumentará 
+            el tiempo de generación. En este caso, <u>le damos un valor de 18</u>, que es adecuado para 
+            obtener buenos resultados sin alargar demasiado el proceso.</li>
+          <li><strong>Tamaño de la imagen:</strong> Configuramos el tamaño de la imagen de salida con las 
+            opciones <strong>Width</strong> (ancho) y <strong>Height</strong> (alto). Estas opciones se 
+            definen en píxeles y es importante elegir un tamaño adecuado según el tipo de imagen que queramos 
+            generar, ya que esto afecta tanto la calidad como el tiempo de procesamiento.</li>
+          <li><strong>CFG Scale:</strong> Controla qué tan estrictamente el modelo sigue el prompt 
+            (la descripción que damos). Un valor más alto significa que el modelo será más preciso en seguir 
+            las indicaciones del prompt, pero a veces puede perder algo de creatividad. <u>Lo dejamos en 6</u>, 
+            que es un valor equilibrado, aunque podemos variar entre <strong>6 a 9</strong> dependiendo de qué 
+            tan preciso o creativo queramos que sea el resultado.</li>
+          <li><strong>Denoising strength:</strong> Controla cuánto se puede alterar la imagen original, 
+            basándose en el nivel de ruido. Con un valor más alto, la imagen puede cambiar más respecto a 
+            la original. <u>Lo dejamos en 0.35</u>, un valor moderado. Podemos variar entre 
+            <strong>0.3 a 0.9</strong> para obtener diferentes efectos de modificación, siendo más bajo 
+            cuando queremos que la imagen final se parezca más a la original.</li>
+        </ul>
+      </div>
+      
+      
+      
+      <div class="contenedor imagen">
+        <img src="Img/0035.jpg" alt="Imagen relacionada">
+      </div>
+      
+      
+      
+      <div class="contenedor texto">
+        <p><strong>5 - Configura Tiled Diffusion</strong><br> Esta opción es útil para generar imágenes 
+          de gran tamaño o patrones repetitivos. Ajustando esta opción, puedes crear imágenes más grandes 
+          sin perder calidad o coherencia.</p>
+        <p><strong>Los pasos para configurarlo son los siguientes:</strong></p>
+        <ol>
+          <li><strong>Tilda la opción "Enable Tiled Diffusion":</strong> Esta opción activa la función de difusión en mosaico, permitiendo generar imágenes más grandes dividiéndolas en secciones.</li>
+          <li><strong>Tilda la opción "Keep input image size":</strong> Al habilitar esta opción, se asegura que el tamaño de la imagen original se mantenga, sin ser modificado durante el proceso de difusión.</li>
+          <li><strong>Latent tile width:</strong> Define el ancho de los "bloques" latentes en los que se divide la imagen. <u>Configura el valor a 112.</u></li>
+          <li><strong>Latent tile height:</strong> Establece la altura de los bloques latentes en los que se divide la imagen. <u>Configura el valor a 144.</u></li>
+          <li><strong>Latent tile overlap:</strong> Controla cuánto se superponen los bloques latentes para mantener la coherencia de la imagen entre las secciones. <u>Configura el valor a 4.</u></li>
+          <li><strong>Latent tile batch size:</strong> Define cuántos bloques latentes se procesan en cada ciclo, lo que afecta la rapidez y la calidad del procesamiento. <u>Configura el valor a 8.</u></li>
+        </ol>
+
+      </div>
+      
+      <div class="contenedor imagen">
+        <img src="Img/0036.jpg" alt="Imagen relacionada">
+      </div>
+      
+      <div class="contenedor texto">
+        <p><strong>6 - Configura ControlNet</strong><br> ControlNet te proporciona un control avanzado en la 
+          generación de imágenes, permitiéndote dirigir el modelo de manera más precisa en aspectos como la estructura y la pose de la imagen.</p>
+        <p><strong>Los pasos para configurarlo son los siguientes:</strong></p>
+
+      <ol>
+          <li><strong>Habilitar "Enable" y "Pixel Perfect":</strong> Activa estas opciones para usar ControlNet y asegurar que la precisión de los píxeles sea la máxima posible.</li>
+          <li><strong>Tilda en las opciones Control Type "Tile":</strong> Elige "Tile" para aplicar el control en secciones o mosaicos.</li>
+          <li><strong>Verifica que en Preprocessor esté "tile_resample"</strong></li>
+          <li><strong>Verifica que en Model esté "control_v11f1e_sd15_tile"</strong></li>
+          <li><strong>En Control Weight:</strong> La recomendación es variar este parámetro entre <strong>0.3 a 1.6</strong>. Para obtener un buen equilibrio entre control y calidad, 
+            configúralo en <strong>0.6</strong>.</li>
+      </ol>
+      </div>
+      
+      
+      <div class="contenedor imagen">
+        <img src="Img/0037.jpg" alt="Imagen relacionada">
+      </div>
+      
+      <div class="contenedor texto">
+        <p><strong>Generación de Imágenes con Configuraciones Personalizadas</strong></p>
+        <p>Una vez que tengas todas las configuraciones listas, es momento de comenzar a generar imágenes con los parámetros que desees. 
+          La imagen generada actuará como un <strong>feedback</strong>, permitiéndote verificar si el resultado se ajusta a lo que 
+          imaginas o deseas. Para comenzar, los parámetros con los que debemos experimentar son:</p>
+        <ol>
+            <li><strong>El Prompt:</strong> Cuanto más detallado sea el prompt, mejor podrá interpretar el programa lo que deseas.</li>
+            <li><strong>CFG Scale:</strong> Este parámetro controla estrictamente el comportamiento del prompt, ajustando la influencia de las instrucciones dadas.</li>
+            <li><strong>Denoising strength:</strong> Controla cuánto se puede modificar la imagen original, permitiendo más o menos alteraciones durante la generación.</li>
+        </ol>
+
+        <p>Una vez que experimentes con estos valores, podrás continuar ajustando otros parámetros como:</p>
+        <ul>
+            <li><strong>Control Weight:</strong> Este parámetro influye en el control que se ejerce sobre la imagen generada.</li>
+            <li><strong>Modelos Lora:</strong> Puedes modificar el peso de los modelos Lora para agregar detalles o personalización adicional.</li>
+        </ul>
+        
+        <p>A continuación, se muestran los resultados de la imagen subida y el prompt utilizado, donde solo se modificaron los siguientes parámetros:</p>
+        <ul>
+            <li><strong>"CFG Scale"</strong> se modificó de <strong>3 a 9</strong></li>
+            <li><strong>"Denoising strength"</strong> se modificó de <strong>0.3 a 0.9</strong></li>
+        </ul>
+      </div>
+      
+      
+      <div class="contenedor imagen">
+        <a href="Img/0038-Ampliada.jpg" target="_blank">
+          <img src="Img/0038.jpg" alt="Imagen relacionada">
+        </a>
+      </div>
+
+    </main>
+</body>
+</html>
