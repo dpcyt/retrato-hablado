@@ -33,12 +33,16 @@
         /* Contenedores */
         .contenedor {
             margin: 20px auto;
+            width: 90%;  /* El contenedor ocupará el 90% del ancho disponible */
+            max-width: none;  /* Elimina cualquier límite en el ancho máximo */
             max-width: 750px;
             padding: 20px;
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
         }
+        
 
         /* Contenedor de texto */
         .contenedor.texto {
